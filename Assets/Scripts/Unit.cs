@@ -3,11 +3,11 @@
 public class Unit : MonoBehaviour
 {
     public float Speed;
-    public Vector2 Direction;
+    public Vector3 Direction { get; set; }
 
     private void Update()
     {
-        var dir = Time.deltaTime * Speed * new Vector3(Direction.x, 0f, Direction.y);
-        transform.Translate(dir);
+        var dir = Time.deltaTime * Speed * Direction;
+        transform.position += dir;
     }
 }

@@ -5,19 +5,26 @@ using UnityEngine;
 public class UnitSpawner : MonoBehaviour
 {
     public float Speed = 2f;
-    public Vector2 Direction;
+
+    [SerializeField] private Vector2 _direction;
+    public Vector3 Direction { get; set; }
     public float Duration = 5f;
     public Unit Prefab;
 
-    private List<Unit> _cars;
+    private List<Unit> _units;
 
-    private static Rect _area = new Rect(new Vector2(-15f, -15f), new Vector2(30f, 30f));
+    private static Rect _area = new Rect(new Vector2(-25f, -25f), new Vector2(60f, 60f));
+
+    private void Awake()
+    {
+        Direction = new Vector3(_direction.x, 0f, _direction.y);
+    }
 
     private void Start()
     {
-        _cars = new List<Unit>();
-        StartCoroutine(CreateCar());
-        StartCoroutine(DestoryOldCars());
+        _units = new List<Unit>();
+        StartCoroutine(CreateUnit());
+        StartCoroutine(DestoryOldUnits());
     }
 
     private void OnDestroy()
@@ -25,31 +32,31 @@ public class UnitSpawner : MonoBehaviour
         StopAllCoroutines();
     }
 
-    private Unit InstantiateCar()
+    private Unit InstantiateUnit()
     {
         var instance = Instantiate(Prefab, transform);
         instance.transform.localPosition = Vector3.zero;
-        instance.transform.localRotation = Quaternion.identity;
+        instance.transform.LookAt(transform.position - Direction);
         instance.Direction = Direction;
         instance.Speed = Speed;
 
         return instance;
     }
 
-    private IEnumerator CreateCar()
+    private IEnumerator CreateUnit()
     {
         yield return new WaitForSeconds(1f);
 
         while (true)
         {
             yield return new WaitForSeconds(Duration);
-            var car = InstantiateCar();
-            _cars.Add(car);
+            var car = InstantiateUnit();
+            _units.Add(car);
             yield return null;
         }
     }
 
-    private IEnumerator DestoryOldCars()
+    private IEnumerator DestoryOldUnits()
     {
         yield return new WaitForSeconds(1f);
 
@@ -58,17 +65,17 @@ public class UnitSpawner : MonoBehaviour
             yield return new WaitForSeconds(2f * Duration);
 
             var toRemove = new List<Unit>();
-            for (var i = 0; i < _cars.Count; i++)
+            for (var i = 0; i < _units.Count; i++)
             {
-                var pos = new Vector2(_cars[i].transform.position.x, _cars[i].transform.position.z);
+                var pos = new Vector2(_units[i].transform.position.x, _units[i].transform.position.z);
                 if (!_area.Contains(pos))
                 {
-                    Destroy(_cars[i].gameObject);
-                    toRemove.Add(_cars[i]);
+                    Destroy(_units[i].gameObject);
+                    toRemove.Add(_units[i]);
                     yield return null;
                 }
             }
-            _cars.RemoveAll(c => toRemove.Contains(c));
+            _units.RemoveAll(c => toRemove.Contains(c));
         }
     }
 }
