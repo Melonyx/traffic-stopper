@@ -435,7 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1.5
   _direction: {x: 0, y: -1}
-  Duration: 3
+  Duration: 5.5
   Prefab: {fileID: 3139618719799918901, guid: a77add18c9a9d4f4aa9407c9a691f712, type: 3}
 --- !u!4 &982714341
 Transform:
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1.5
   _direction: {x: 0, y: 1}
-  Duration: 4
+  Duration: 6
   Prefab: {fileID: 3139618719799918901, guid: a77add18c9a9d4f4aa9407c9a691f712, type: 3}
 --- !u!4 &1329622114
 Transform:
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3.5
   _direction: {x: 1, y: 0}
-  Duration: 2.2
+  Duration: 4.4
   Prefab: {fileID: 4984999355851094022, guid: e4780b19356c6a94f87b24ab4dbd82c3, type: 3}
 --- !u!4 &1558863836
 Transform:
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2.5
   _direction: {x: -1, y: 0}
-  Duration: 2
+  Duration: 4
   Prefab: {fileID: 4984999355851094022, guid: e4780b19356c6a94f87b24ab4dbd82c3, type: 3}
 --- !u!4 &1580171857
 Transform:
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3.5
   _direction: {x: 1, y: 0}
-  Duration: 3
+  Duration: 6
   Prefab: {fileID: 4984999355851094022, guid: e4780b19356c6a94f87b24ab4dbd82c3, type: 3}
 --- !u!1 &1744287464
 GameObject:
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3.4
   _direction: {x: -1, y: 0}
-  Duration: 2.5
+  Duration: 5
   Prefab: {fileID: 4984999355851094022, guid: e4780b19356c6a94f87b24ab4dbd82c3, type: 3}
 --- !u!4 &1744287466
 Transform:
