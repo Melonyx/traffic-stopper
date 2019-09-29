@@ -2,9 +2,9 @@
 
 public class Sheep : Unit
 {
-    private void OnTriggerEnter(Collider collider)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collider.transform.GetComponent<Car>() != null)
+        if (collision.transform.GetComponent<Car>() != null)
         {
             Handheld.Vibrate();
         }
