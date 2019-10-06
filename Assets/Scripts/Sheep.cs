@@ -6,7 +6,7 @@ public class Sheep : Unit
     {
         if (collision.transform.GetComponent<Car>() != null)
         {
-            Handheld.Vibrate();
+            GameUtils.GameOver();
         }
     }
 }
