@@ -1548,7 +1548,7 @@ MonoBehaviour:
   Speed: 3.5
   _direction: {x: 1, y: 0}
   _endpointCollider: {fileID: 0}
-  Duration: 4.4
+  Duration: 8.3
   Prefab: {fileID: 4984999355851094022, guid: e4780b19356c6a94f87b24ab4dbd82c3, type: 3}
 --- !u!4 &1558863836
 Transform:
@@ -1596,7 +1596,7 @@ MonoBehaviour:
   Speed: 2.5
   _direction: {x: -1, y: 0}
   _endpointCollider: {fileID: 0}
-  Duration: 4
+  Duration: 9.6
   Prefab: {fileID: 4984999355851094022, guid: e4780b19356c6a94f87b24ab4dbd82c3, type: 3}
 --- !u!4 &1580171857
 Transform:
@@ -1798,7 +1798,7 @@ MonoBehaviour:
   Speed: 3.5
   _direction: {x: 1, y: 0}
   _endpointCollider: {fileID: 0}
-  Duration: 6
+  Duration: 9
   Prefab: {fileID: 4984999355851094022, guid: e4780b19356c6a94f87b24ab4dbd82c3, type: 3}
 --- !u!1 &1744287464
 GameObject:
@@ -1832,7 +1832,7 @@ MonoBehaviour:
   Speed: 3.4
   _direction: {x: -1, y: 0}
   _endpointCollider: {fileID: 0}
-  Duration: 5
+  Duration: 8.1
   Prefab: {fileID: 4984999355851094022, guid: e4780b19356c6a94f87b24ab4dbd82c3, type: 3}
 --- !u!4 &1744287466
 Transform:
