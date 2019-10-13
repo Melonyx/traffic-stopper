@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,15 +16,17 @@ public class GameUtils : MonoBehaviour
         DontDestroyOnLoad(_gameOverCanvas);
 
         _reloadButton.onClick.AddListener(() => GameStart());
+
+        Stats.LifesEnded += GameOver;
     }
 
     [SerializeField] private Canvas _gameOverCanvas;
     [SerializeField] private Button _reloadButton;
+    [SerializeField] private TextMeshProUGUI _scoredText;
 
     public static void GameStart(bool restart = true)
     {
         Time.timeScale = 1f;
-        Stats.Sheeps = 0;
 
         if (restart)
             _instance.StartCoroutine(ReloadScene());
@@ -40,11 +43,13 @@ public class GameUtils : MonoBehaviour
 
     private void ShowCanvas(bool mode)
     {
+        _scoredText.text = $"You scored: {Stats.Sheeps}";
         _gameOverCanvas.gameObject.SetActive(mode);
     }
 
     private static IEnumerator ReloadScene()
     {
+        Stats.ToDefault();
         var scene = SceneManager.GetActiveScene().name;
         yield return SceneManager.UnloadSceneAsync(scene);
         yield return new WaitForSeconds(0.1f);

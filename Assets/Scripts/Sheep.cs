@@ -5,7 +5,7 @@ public class Sheep : Unit
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.GetComponent<Car>() != null)
-            GameUtils.GameOver();
+            Stats.Lifes--;
     }
 
     private void OnTriggerEnter(Collider collider)
