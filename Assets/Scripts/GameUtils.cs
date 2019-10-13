@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,6 +23,7 @@ public class GameUtils : MonoBehaviour
     public static void GameStart(bool restart = true)
     {
         Time.timeScale = 1f;
+        Stats.Sheeps = 0;
 
         if (restart)
             _instance.StartCoroutine(ReloadScene());

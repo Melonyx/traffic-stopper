@@ -4,6 +4,7 @@ public class Unit : MonoBehaviour
 {
     public float Speed;
     public Vector3 Direction { get; set; }
+    public Collider EndpointCollider { get; set; }
 
     private void Update()
     {

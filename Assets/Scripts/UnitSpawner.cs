@@ -7,6 +7,8 @@ public class UnitSpawner : MonoBehaviour
     public float Speed = 2f;
 
     [SerializeField] private Vector2 _direction;
+    [SerializeField] private Collider _endpointCollider;
+
     public Vector3 Direction { get; set; }
     public float Duration = 5f;
     public Unit Prefab;
@@ -39,6 +41,7 @@ public class UnitSpawner : MonoBehaviour
         instance.transform.LookAt(transform.position - Direction);
         instance.Direction = Direction;
         instance.Speed = Speed;
+        instance.EndpointCollider = _endpointCollider;
 
         return instance;
     }
